@@ -1,5 +1,6 @@
 ﻿using MarsQA_1.Helpers;
 using MarsQA_1.Pages;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using RelevantCodes.ExtentReports;
@@ -36,12 +37,13 @@ namespace MarsQA_1.Bind_Steps
             Driver.driver.FindElement(By.XPath("//input[@placeholder='Add Language']")).SendKeys(language);
 
             //Select language level
-            IWebElement Level = Driver.driver.FindElement(By.XPath("//select[@name='level']"));
-            Level.Click();
+            Driver.driver.FindElement(By.Name("level")).SendKeys("Basic");
+            //IWebElement Level = Driver.driver.FindElement(By.XPath("//select[@name='level']"));
+            //Level.Click();
 
-            //Choose the language level
-            SelectElement LevelSelect = new SelectElement(Level);
-            LevelSelect.SelectByText("Basic");
+            ////Choose the language level
+            //SelectElement LevelSelect = new SelectElement(Level);
+            //LevelSelect.SelectByText("Basic");
 
             //Click on Add button
             Driver.driver.FindElement(By.XPath("//body//div[@id='account-profile-section']//div//div//div//div//div//div[3]//input[1]")).Click();
@@ -61,19 +63,21 @@ namespace MarsQA_1.Bind_Steps
 
                 Thread.Sleep(1000);
                 string Expected = language;
+
                 for (int i = 1; i <= 4; i++)
                 {
                     string Actual = Driver.driver.FindElement(By.XPath("/html[1]/body[1]/div[1]/div[1]/section[2]/div[1]/div[1]/div[1]/div[3]/form[1]/div[2]/div[1]/div[2]/div[1]/table[1]/tbody[" + i + "]/tr[1]/td[1]")).Text;
-
+                  //  string buttonText = Driver.driver.FindElement(By.XPath("//div[contains(@class,'active')]//div[contains(@class,'button')][contains(text(),'Add New')]")).Text;
+                 //   Assert.That(Actual,Expected));
                     Thread.Sleep(500);
-                    if (Expected == Actual)
-                    {
+                   if (Expected == Actual)
+                  {
                         CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added Language Successfully");
                         SaveScreenShotClass.SaveScreenshot(Driver.driver, "Language Added");
-                    }
+                   }
                   /*  else
                         CommonMethods.test.Log(LogStatus.Fail, "Test Failed"); */
-                }
+                 }
             }
             catch (Exception e)
             {

@@ -130,11 +130,12 @@ namespace MarsQA_1.Pages
         {
             //Select Language
             var delete = Driver.driver.FindElement(By.XPath("/html[1]/body[1]/div[1]/div[1]/section[2]/div[1]/div[1]/div[1]/div[3]/form[1]/div[2]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]")).Text;
+
             for (int i = 1; i <= 4; i++)
             {
                 
             //    Console.WriteLine(delete);
-                if (delete == ExcelLibHelper.ReadData(7, "Language"))
+                if (delete == "Japanese")
                 {
                     //click on delete icon
                     Driver.driver.FindElement(By.XPath("//div[@class='ui bottom attached tab segment active tooltip-target']//tbody[" + i + "]//tr[1]//td[3]//span[2]//i[1]")).Click();
