@@ -4,17 +4,11 @@ using System.Threading;
 
 namespace MarsQA_1.Pages
 {
-    class SignIn
+    public class SignIn
     {
-        private IWebDriver driver;
-
-        public SignIn(IWebDriver driver)
-        {
-            this.driver = driver;
-        }
+        
         public static void SigninStep()
         {
-            //  driver.Navigate().GoToUrl("http://www.skillswap.pro/Home");
             Driver.NavigateUrl();
             Thread.Sleep(1000);
 

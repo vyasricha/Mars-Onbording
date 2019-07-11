@@ -72,39 +72,48 @@ namespace MarsQA_1.FeatureFile
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check if user is able to add new language")]
-        [NUnit.Framework.CategoryAttribute("autoamte")]
-        public virtual void CheckIfUserIsAbleToAddNewLanguage()
+        [NUnit.Framework.CategoryAttribute("automation")]
+        [NUnit.Framework.TestCaseAttribute("French", null)]
+        [NUnit.Framework.TestCaseAttribute("Japanese", null)]
+        [NUnit.Framework.TestCaseAttribute("English", null)]
+        [NUnit.Framework.TestCaseAttribute("Korean", null)]
+        public virtual void CheckIfUserIsAbleToAddNewLanguage(string language, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user is able to add new language", null, new string[] {
-                        "autoamte"});
+            string[] @__tags = new string[] {
+                    "automation"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user is able to add new language", null, @__tags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
 testRunner.Given("I am on the Languages tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
-testRunner.When("I click on Add New Button and I add new language and level", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When(string.Format("I add new {0} and level", language), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
-testRunner.Then("new language and level should display on my listing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then(string.Format("new {0} and level should display on my listing", language), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check if user is able to edit selected language")]
-        [NUnit.Framework.CategoryAttribute("automate")]
+        [NUnit.Framework.CategoryAttribute("automation")]
         public virtual void CheckIfUserIsAbleToEditSelectedLanguage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user is able to edit selected language", null, new string[] {
-                        "automate"});
-#line 13
+                        "automation"});
+#line 19
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 14
+#line 20
 testRunner.Given("The language is alrady exist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 15
+#line 21
 testRunner.When("I click on edit icon and edit selected language", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 16
+#line 22
 testRunner.Then("the edited language should display on my listings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -112,19 +121,19 @@ testRunner.Then("the edited language should display on my listings", ((string)(n
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check if user is able to delete the language")]
-        [NUnit.Framework.CategoryAttribute("automate")]
+        [NUnit.Framework.CategoryAttribute("automation")]
         public virtual void CheckIfUserIsAbleToDeleteTheLanguage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user is able to delete the language", null, new string[] {
-                        "automate"});
-#line 19
+                        "automation"});
+#line 25
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 20
+#line 26
 testRunner.Given("The language is alrady exist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 21
+#line 27
 testRunner.When("I click on delete icon and delete selected language", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 22
+#line 28
 testRunner.Then("the deleted language should not display on my listings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -137,14 +146,14 @@ testRunner.Then("the deleted language should not display on my listings", ((stri
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user is able to add more than four languages", null, new string[] {
                         "manual"});
-#line 25
+#line 31
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 26
+#line 32
 testRunner.Given("I have four languages in my list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 27
+#line 33
 testRunner.When("I try to add fiveth language", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 28
+#line 34
 testRunner.Then("Add New button should not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -157,16 +166,16 @@ testRunner.Then("Add New button should not displayed", ((string)(null)), ((TechT
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user is able to add duplicate language", null, new string[] {
                         "manual"});
-#line 31
+#line 37
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 32
+#line 38
 testRunner.Given("The language is already in my list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 33
+#line 39
 testRunner.When("I try to add the same language", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 34
+#line 40
 testRunner.Then("The alert message \"Duplicate data\" should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 35
+#line 41
 testRunner.And("Language does not entered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -181,20 +190,20 @@ testRunner.And("Language does not entered", ((string)(null)), ((TechTalk.SpecFlo
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user is able to add language without entering the value in language fiel" +
                     "d", null, new string[] {
                         "manual"});
-#line 38
+#line 44
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 39
+#line 45
 testRunner.Given("I am on the Languages tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 40
+#line 46
 testRunner.When("I clicked on Add New button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 41
+#line 47
 testRunner.And("I select the language level", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 42
+#line 48
 testRunner.But("I did not enter language", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
-#line 43
+#line 49
 testRunner.Then("The alert message \"Please enter language and level\" should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 44
+#line 50
 testRunner.And("New language does not entered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -207,20 +216,20 @@ testRunner.And("New language does not entered", ((string)(null)), ((TechTalk.Spe
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user is able to add language without selecting the language level", null, new string[] {
                         "manual"});
-#line 47
+#line 53
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 48
+#line 54
 testRunner.Given("I am on the Languages tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 49
+#line 55
 testRunner.When("I clicked on Add New button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 50
+#line 56
 testRunner.And("I entered the new language", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
+#line 57
 testRunner.But("I did not select the language level", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
-#line 52
+#line 58
 testRunner.Then("The alert message \"Please enter language and level\" should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 53
+#line 59
 testRunner.And("New language does not entered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -235,18 +244,18 @@ testRunner.And("New language does not entered", ((string)(null)), ((TechTalk.Spe
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user is able to add language without entering value in language field an" +
                     "d selecting the language level", null, new string[] {
                         "manual"});
-#line 56
+#line 62
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 57
+#line 63
 testRunner.Given("I am on the Languages tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 58
+#line 64
 testRunner.When("I clicked on Add New button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 59
+#line 65
 testRunner.And("I did not entered the new language and select the language level", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
+#line 66
 testRunner.Then("The alert message \"Please enter language and level\" should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 61
+#line 67
 testRunner.And("language does not entered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

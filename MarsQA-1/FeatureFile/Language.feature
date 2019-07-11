@@ -3,19 +3,25 @@
 	As a skill trader
 	I want to add, edit and delete language
 
-@autoamte
-Scenario: Check if user is able to add new language
+@automation
+Scenario Outline: Check if user is able to add new language
 Given I am on the Languages tab
-When I click on Add New Button and I add new language and level
-Then new language and level should display on my listing
+When I add new <language> and level
+Then new <language> and level should display on my listing
+Examples:
+| language |
+| French   |
+| Japanese |
+| English  |
+| Korean   |
 	
-@automate
+@automation
 Scenario: Check if user is able to edit selected language
 Given The language is alrady exist
 When I click on edit icon and edit selected language
 Then the edited language should display on my listings
 
-@automate
+@automation
 Scenario: Check if user is able to delete the language
 Given The language is alrady exist
 When I click on delete icon and delete selected language

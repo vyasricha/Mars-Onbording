@@ -13,7 +13,7 @@ namespace MarsQA_1.Helpers
         //Initialize the browser
         public static IWebDriver driver { get; set; }
 
-        public static void Initialize()
+        public void Initialize()
         {
             //Defining the browser
             driver = new ChromeDriver();
@@ -25,7 +25,7 @@ namespace MarsQA_1.Helpers
 
         public static string BaseUrl
         {
-            get { return ConstantUtils.Url; }
+            get { return ConstantHelpers.Url; }
         }
 
 
@@ -42,7 +42,7 @@ namespace MarsQA_1.Helpers
         }
 
         //Close the browser
-        public static void Close()
+        public void Close()
         {
             driver.Quit();
         }
