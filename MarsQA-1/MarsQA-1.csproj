@@ -105,52 +105,52 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bind_Steps\LanguagesTabSteps.cs" />
-    <Compile Include="FeatureFile\Certifications.feature.cs">
+    <Compile Include="SpecflowTests\Bind_Steps\LanguagesTabSteps.cs" />
+    <Compile Include="SpecflowTests\FeatureFile\Certifications.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Certifications.feature</DependentUpon>
     </Compile>
-    <Compile Include="FeatureFile\Education.feature.cs">
+    <Compile Include="SpecflowTests\FeatureFile\Education.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Education.feature</DependentUpon>
     </Compile>
-    <Compile Include="FeatureFile\Language.feature.cs">
+    <Compile Include="SpecflowTests\FeatureFile\Language.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Language.feature</DependentUpon>
     </Compile>
-    <Compile Include="FeatureFile\Skills.feature.cs">
+    <Compile Include="SpecflowTests\FeatureFile\Skills.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Skills.feature</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\CommonMethods.cs" />
-    <Compile Include="Helpers\ConstantHelpers.cs" />
-    <Compile Include="Helpers\Driver.cs" />
-    <Compile Include="Helpers\ExcelLibHelper.cs" />
-    <Compile Include="Pages\Profile_Language.cs" />
-    <Compile Include="Pages\SignIn.cs" />
-    <Compile Include="Utils\Start.cs" />
+    <Compile Include="SpecflowPages\Helpers\CommonMethods.cs" />
+    <Compile Include="SpecflowPages\Helpers\ConstantHelpers.cs" />
+    <Compile Include="SpecflowPages\Helpers\Driver.cs" />
+    <Compile Include="SpecflowPages\Helpers\ExcelLibHelper.cs" />
+    <Compile Include="SpecflowPages\Pages\Profile_Language.cs" />
+    <Compile Include="SpecflowPages\Pages\SignIn.cs" />
+    <Compile Include="SpecflowPages\Utils\Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Data\Data.xlsx" />
-    <None Include="FeatureFile\Certifications.feature">
+    <None Include="SpecflowTests\Data\Data.xlsx" />
+    <None Include="SpecflowTests\FeatureFile\Certifications.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Certifications.feature.cs</LastGenOutput>
     </None>
-    <None Include="FeatureFile\Education.feature">
+    <None Include="SpecflowTests\FeatureFile\Education.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Education.feature.cs</LastGenOutput>
     </None>
-    <None Include="FeatureFile\Language.feature">
+    <None Include="SpecflowTests\FeatureFile\Language.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Language.feature.cs</LastGenOutput>
     </None>
-    <None Include="FeatureFile\Skills.feature">
+    <None Include="SpecflowTests\FeatureFile\Skills.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Skills.feature.cs</LastGenOutput>
     </None>
@@ -159,10 +159,8 @@
   <ItemGroup>
     <Folder Include="TestReports\Screenshots\" />
     <Folder Include="TestReports\Test_files\" />
-    <Folder Include="TestResults\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TestReports\ReportXML.xml" />
     <Content Include="TestReports\Test.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
